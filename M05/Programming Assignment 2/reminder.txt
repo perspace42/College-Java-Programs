@@ -1,0 +1,9 @@
+The command to create a class file for javaFx is (Note: you dpn't always need to create a class file):
+
+    javac -cp "C:/Users/field/Documents/JavaFX/openjfx-17.0.8_windows-x64_bin-sdk/javafx-sdk-17.0.8/lib" --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web,javafx.base Main.java
+
+Then use the Java Projects Extension Tab to create the jar file (Doing it manually doesn't seem to work all that well)
+
+The command to then test that jar file is (Note: substitute 'Module_Five_Program_One' for your jar file name)
+    (Also remember to run this command from the folder containing your jar file (default dist) )
+    java --module-path "c:\\Users\\field\\Documents\\JavaFX\\openjfx-17.0.8_windows-x64_bin-sdk\\javafx-sdk-17.0.8\\lib/" --add-modules javafx.controls,javafx.base,javafx.fxml,javafx.graphics,javafx.media,javafx.web -jar --enable-preview Module_Five_Program_Two.jar
