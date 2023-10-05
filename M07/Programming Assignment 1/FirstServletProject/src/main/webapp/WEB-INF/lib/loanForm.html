@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!--
+Author: Scott Field
+Date: 10/03/2023
+Version: 1.0
+Purpose:
+provide the HTML form for the user to enter data within the loan payment calculator    
+-->
+<html>
+<head>
+  <title>Loan Payment Calculator</title>
+</head>
+<body>
+  <h1>Compute Tax</h1>
+  <!--The onsubmit attribute here ensures that the validateYears is validated before continuing-->
+  <form action="calculateLoan" method="post" onsubmit = "return validateYears">
+    <label for="loanAmount">Loan Amount:</label>
+    <input type="number" id="loanAmount" name = "loanAmount" step = "any" min = "0" required><br><br>
+
+    <label for="interestRate">Interest Rate:</label>
+    <input type="number" id="interestRate" name = "interestRate" step = "any" min = "0" required><br><br>
+	
+    <label for="numberOfYears">Number of Years:</label>
+    <input type="number" id="numOfYears" name = "numberOfYears" min = "0" required><br><br>
+	
+	<!--Submit Button-->
+    <input type="submit" value="Compute Loan Payment"> 
+	<!--Reset Button-->
+    <input type = "reset">
+  </form>
+</body>
+
+<!--Write The Script To Check That The Number Of Years Is Not A Decimal-->
+<script>
+    function validateYears() {
+    	var numberOfYears = document.getElementById("numOfYears").value;
+    	if (numberOfYears % 1 !== 0) {
+    		alert("Number of years must be an integer.");
+        	return false;
+      	}
+      	return true;
+    }
+</script>
+
+</html>
